@@ -1,0 +1,34 @@
+{
+	"name": "amazon-products",
+	"version": "1.0.0",
+	"description": "Base WP plugin",
+	"private": true,
+	"directories": {
+		"test": "tests"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "npx babel assets/js/example.js --out-dir ./assets/js/min/"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/jbaldrich/amazon-products.git"
+	},
+	"author": "Jaco Baldrich",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/jbaldrich/amazon-products/issues"
+	},
+	"homepage": "https://github.com/jbaldrich/amazon-products#readme",
+	"devDependencies": {
+		"@babel/cli": "^7.8.4",
+		"@babel/core": "^7.9.6",
+		"@babel/preset-env": "7.5.5",
+		"babel-preset-minify": "^0.5.1"
+	},
+	"dependencies": {
+		"@babel/plugin-transform-arrow-functions": "^7.8.3",
+		"@babel/polyfill": "^7.8.7",
+		"core-js": "^3.6.5"
+	}
+}

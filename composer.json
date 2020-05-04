@@ -1,0 +1,60 @@
+{
+	"name": "jacobaldrich/amazon-products",
+	"description": "A plugin to retrieve products from Amazon API.",
+	"type": "wordpress-plugin",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Jaco Baldrich",
+			"email": "hello@jacobaldrich.com"
+		}
+	],
+	"repositories": [
+		{
+			"type": "package",
+			"package": {
+				"name": "amzn/paapi5-php-sdk",
+				"version": "master",
+				"dist": {
+					"type": "zip",
+					"url": "https://webservices.amazon.com/paapi5/documentation/assets/archives/paapi5-php-sdk-example.zip",
+					"reference": "master"
+				}
+			}
+		}
+	],
+	"require": {
+		"amzn/paapi5-php-sdk": "dev-master",
+		"guzzlehttp/guzzle": "^6.5",
+		"vlucas/phpdotenv": "^4.1"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "^8",
+		"inpsyde/php-coding-standards": "^0.13.4",
+		"phpstan/phpstan": "^0.12.19",
+		"szepeviktor/phpstan-wordpress": "^0.6.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"JacoBaldrich\\BasePlugin\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Tests\\JacoBaldrich\\BasePlugin\\": "tests/"
+		}
+	},
+	"scripts": {
+		"pre-autoload-dump": [
+			"rm -rf vendor/amzn/paapi5-php-sdk/paapi5-php-sdk-example/vendor/sebastian",
+			"rm -rf vendor/amzn/paapi5-php-sdk/paapi5-php-sdk-example/vendor/phpunit"
+		],
+		"post-autoload-dump": [
+			"rm -rf vendor/amzn/paapi5-php-sdk/__MACOSX"
+		],
+		"test": "vendor/bin/phpunit --bootstrap vendor/autoload.php --testdox tests",
+		"style": "phpcs --colors src tests templates",
+		"fix-style": "phpcbf src tests templates",
+		"phpstan": "vendor/bin/phpstan analyse -c phpstan.neon --memory-limit=1G"
+	}
+}
