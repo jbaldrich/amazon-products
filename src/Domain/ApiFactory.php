@@ -1,6 +1,6 @@
 <?php
 
-namespace JacoBaldrich\BasePlugin\Domain;
+namespace JacoBaldrich\AmazonProducts\Domain;
 
 interface ApiFactory
 {

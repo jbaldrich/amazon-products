@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace JacoBaldrich\BasePlugin\Application;
+namespace JacoBaldrich\AmazonProducts\Application;
 
-use JacoBaldrich\BasePlugin\Domain\Request;
+use JacoBaldrich\AmazonProducts\Domain\Request;
 
 final class ItemsRequest implements Request
 {

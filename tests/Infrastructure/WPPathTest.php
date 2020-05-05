@@ -1,9 +1,9 @@
 <?php declare (strict_types = 1);
 
-namespace Tests\JacoBaldrich\BasePlugin\Infrastructure;
+namespace Tests\JacoBaldrich\AmazonProducts\Infrastructure;
 
-use JacoBaldrich\BasePlugin\Domain\Path;
-use JacoBaldrich\BasePlugin\Infrastructure\WPPath;
+use JacoBaldrich\AmazonProducts\Domain\Path;
+use JacoBaldrich\AmazonProducts\Infrastructure\WPPath;
 use PHPUnit\Framework\TestCase;
 
 final class WPPathTest extends TestCase

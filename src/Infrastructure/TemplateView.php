@@ -1,9 +1,9 @@
 <?php declare (strict_types = 1);
 
-namespace JacoBaldrich\BasePlugin\Infrastructure;
+namespace JacoBaldrich\AmazonProducts\Infrastructure;
 
-use JacoBaldrich\BasePlugin\Domain\Path;
-use JacoBaldrich\BasePlugin\Domain\View;
+use JacoBaldrich\AmazonProducts\Domain\Path;
+use JacoBaldrich\AmazonProducts\Domain\View;
 use stdClass;
 
 class TemplateView implements View

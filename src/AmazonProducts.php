@@ -1,14 +1,14 @@
 <?php declare (strict_types = 1);
 
-namespace JacoBaldrich\BasePlugin;
+namespace JacoBaldrich\AmazonProducts;
 
 use Dotenv\Dotenv;
-use JacoBaldrich\BasePlugin\Application\ItemSearcher;
-use JacoBaldrich\BasePlugin\Infrastructure\AmazonApiFactory;
-use JacoBaldrich\BasePlugin\Infrastructure\TemplateViewFactory;
-use JacoBaldrich\BasePlugin\Infrastructure\WPPath;
+use JacoBaldrich\AmazonProducts\Application\ItemSearcher;
+use JacoBaldrich\AmazonProducts\Infrastructure\AmazonApiFactory;
+use JacoBaldrich\AmazonProducts\Infrastructure\TemplateViewFactory;
+use JacoBaldrich\AmazonProducts\Infrastructure\WPPath;
 
-final class BasePlugin implements Plugin
+final class AmazonProducts implements Plugin
 {
     private const HOOK = 'plugins_loaded';
 

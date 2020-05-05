@@ -1,3 +1,4 @@
+<?php declare(strict_types=1); ?>
 <?php foreach ($this->context->items as $item) : ?>
     <article>
         <a href="<?php echo esc_attr($item->url()); ?>" rel="nofollow">
@@ -21,7 +22,7 @@
                 </p>
             </a>
             <ul>
-                <?php foreach($item->features() as $feature) : ?>
+                <?php foreach ($item->features() as $feature) : ?>
                     <li class='article-text'>
                         <?php echo esc_html($feature); ?>
                     </li>

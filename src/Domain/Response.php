@@ -1,6 +1,6 @@
 <?php declare (strict_types = 1);
 
-namespace JacoBaldrich\BasePlugin\Domain;
+namespace JacoBaldrich\AmazonProducts\Domain;
 
 interface Response
 {

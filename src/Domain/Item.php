@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace JacoBaldrich\BasePlugin\Domain;
+namespace JacoBaldrich\AmazonProducts\Domain;
 
 final class Item
 {
@@ -25,6 +25,7 @@ final class Item
         array $features,
         string $moreLikeThatUrl
     ) {
+
         $this->url = $url;
         $this->image = $image;
         $this->title = $title;

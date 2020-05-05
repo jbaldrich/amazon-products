@@ -15,4 +15,12 @@
 
 	<rule ref="Inpsyde"/>
 
+	<rule ref="Inpsyde.CodeQuality.FunctionBodyStart.WrongForMultiLineDeclaration">
+		<severity>0</severity>
+	</rule>
+
+	<rule ref="NeutronStandard.AssignAlign.DisallowAssignAlign.Aligned">
+		<severity>0</severity>
+	</rule>
+
 </ruleset>

@@ -1,11 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace JacoBaldrich\BasePlugin\Infrastructure;
+namespace JacoBaldrich\AmazonProducts\Infrastructure;
 
 use Amazon\ProductAdvertisingAPI\v1\com\amazon\paapi5\v1\PartnerType;
 use Amazon\ProductAdvertisingAPI\v1\com\amazon\paapi5\v1\SearchItemsRequest;
 use Amazon\ProductAdvertisingAPI\v1\com\amazon\paapi5\v1\SearchItemsResource;
-use JacoBaldrich\BasePlugin\Application\ItemsRequest;
+use JacoBaldrich\AmazonProducts\Application\ItemsRequest;
 
 final class RequestTransformer
 {
@@ -22,7 +22,7 @@ final class RequestTransformer
         $searchItemsRequest->setSearchIndex(self::SEARCH_INDEX);
         $searchItemsRequest->setKeywords($request->keyword());
         $searchItemsRequest->setItemCount($request->itemsQuantity());
-        $searchItemsRequest->setPartnerTag(getenv('PARTNER_TAG'));
+        $searchItemsRequest->setPartnerTag(getenv('PARTNER_TAG') ?: '');
         $searchItemsRequest->setPartnerType(PartnerType::ASSOCIATES);
         $searchItemsRequest->setResources($this->resources());
         return $searchItemsRequest;

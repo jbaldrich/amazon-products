@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace JacoBaldrich\BasePlugin\Infrastructure;
+namespace JacoBaldrich\AmazonProducts\Infrastructure;
 
-use JacoBaldrich\BasePlugin\Domain\Api;
-use JacoBaldrich\BasePlugin\Domain\ApiFactory;
+use JacoBaldrich\AmazonProducts\Domain\Api;
+use JacoBaldrich\AmazonProducts\Domain\ApiFactory;
 
 final class AmazonApiFactory implements ApiFactory
 {

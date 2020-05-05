@@ -1,6 +1,6 @@
 <?php declare( strict_types=1 );
 
-namespace JacoBaldrich\BasePlugin;
+namespace JacoBaldrich\AmazonProducts;
 
 interface Plugin
 {

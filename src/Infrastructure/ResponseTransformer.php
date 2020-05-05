@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace JacoBaldrich\BasePlugin\Infrastructure;
+namespace JacoBaldrich\AmazonProducts\Infrastructure;
 
 use Amazon\ProductAdvertisingAPI\v1\com\amazon\paapi5\v1\SearchItemsResponse;
-use JacoBaldrich\BasePlugin\Domain\Item;
-use JacoBaldrich\BasePlugin\Application\ItemsResponse;
+use JacoBaldrich\AmazonProducts\Domain\Item;
+use JacoBaldrich\AmazonProducts\Application\ItemsResponse;
 
 final class ResponseTransformer
 {

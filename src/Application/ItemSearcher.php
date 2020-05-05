@@ -1,12 +1,12 @@
 <?php declare(strict_types=1);
 
-namespace JacoBaldrich\BasePlugin\Application;
+namespace JacoBaldrich\AmazonProducts\Application;
 
-use JacoBaldrich\BasePlugin\Domain\Api;
-use JacoBaldrich\BasePlugin\Domain\ApiFactory;
-use JacoBaldrich\BasePlugin\Domain\Path;
-use JacoBaldrich\BasePlugin\Domain\View;
-use JacoBaldrich\BasePlugin\Domain\ViewFactory;
+use JacoBaldrich\AmazonProducts\Domain\Api;
+use JacoBaldrich\AmazonProducts\Domain\ApiFactory;
+use JacoBaldrich\AmazonProducts\Domain\Path;
+use JacoBaldrich\AmazonProducts\Domain\View;
+use JacoBaldrich\AmazonProducts\Domain\ViewFactory;
 
 final class ItemSearcher implements Service
 {
@@ -21,10 +21,9 @@ final class ItemSearcher implements Service
         $this->path = $path;
     }
 
-
     public function register(): void
     {
-        \add_shortcode( 'amazoner', $this );
+        \add_shortcode('amazoner', $this);
     }
 
     public function __invoke(array $attributes): void
@@ -43,6 +42,7 @@ final class ItemSearcher implements Service
             $context = new \stdClass();
             $context->items = $response->items();
             $view = $this->createView();
+            // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
             echo $view->render($context);
         }
     }
@@ -50,10 +50,14 @@ final class ItemSearcher implements Service
     private function mergeWithDefaultAttributes(array $attributes): array
     {
         global $post;
-        return shortcode_atts([
-            'keyword' => $post->post_name,
-            'items'   => 8,
-        ], $attributes, 'amazoner');
+        return \shortcode_atts(
+            [
+                'keyword' => $post->post_name,
+                'items'   => 8,
+            ],
+            $attributes,
+            'amazoner'
+        );
     }
 
     private function createApi(): Api

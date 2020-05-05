@@ -1,8 +1,8 @@
 <?php
 /**
- * Base Plugin.
+ * Amazon Products.
  *
- * @package   JacoBaldrich\BasePlugin
+ * @package   JacoBaldrich\AmazonProducts
  * @author    Jaco Baldrich <hello@jacobaldrich.com>
  * @copyright 2020 Jaco Baldrich
  *
@@ -16,7 +16,7 @@
  * Domain Path:  /languages
  */
 
-namespace JacoBaldrich\BasePlugin;
+namespace JacoBaldrich\AmazonProducts;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	die();

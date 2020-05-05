@@ -1,6 +1,6 @@
 <?php declare (strict_types = 1);
 
-namespace JacoBaldrich\BasePlugin\Application;
+namespace JacoBaldrich\AmazonProducts\Application;
 
 interface Service
 {
