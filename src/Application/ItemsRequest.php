@@ -7,12 +7,12 @@ use JacoBaldrich\AmazonProducts\Domain\Request;
 final class ItemsRequest implements Request
 {
     private $keyword;
-    private $itemsQuantity;
+    private $page;
 
-    public function __construct(string $keyword, int $itemsQuantity)
+    public function __construct(string $keyword, int $page)
     {
         $this->keyword = $keyword;
-        $this->itemsQuantity = $itemsQuantity;
+        $this->page = $page;
     }
 
     public function keyword(): string
@@ -20,8 +20,8 @@ final class ItemsRequest implements Request
         return $this->keyword;
     }
 
-    public function itemsQuantity(): int
+    public function page(): int
     {
-        return $this->itemsQuantity;
+        return $this->page;
     }
 }

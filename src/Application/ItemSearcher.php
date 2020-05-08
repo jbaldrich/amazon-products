@@ -32,10 +32,11 @@ final class ItemSearcher implements Service
 
         $request = new ItemsRequest(
             $attributes['keyword'],
-            (int) $attributes['items']
+            (int) $attributes['page']
         );
 
         $api = $this->createApi();
+        /** @var ItemsResponse $response */
         $response = $api->ask($request);
 
         if ($response->isSuccessful()) {
@@ -52,8 +53,8 @@ final class ItemSearcher implements Service
         global $post;
         return \shortcode_atts(
             [
-                'keyword' => $post->post_name,
-                'items'   => 8,
+                'keyword' => $post->post_name ?? 'caca',
+                'page'   => 1,
             ],
             $attributes,
             'amazoner'

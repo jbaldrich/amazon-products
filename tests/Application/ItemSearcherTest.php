@@ -20,17 +20,17 @@ final class ItemSearcherTest extends TestCase
     public function isShouldRenderTheTemplateWithAmazonItems(): void
     {
         $keyword = 'cucumber';
-        $itemsQuantity = 3;
+        $page = 3;
         $attributes = [
             'keyword' => $keyword,
-            'items'   => $itemsQuantity,
+            'page'   => $page,
         ];
         $expectedOutput = 'eggplant';
 
         $this->mockFunction('shortcode_atts', $attributes);
         $this->mockGlobalPost();
 
-        $request = new ItemsRequest($keyword, $itemsQuantity);
+        $request = new ItemsRequest($keyword, $page);
 
         $response = $this->mock(Response::class);
         $response->expects()->isSuccessful()->andReturnTrue();

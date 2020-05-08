@@ -21,7 +21,7 @@ final class RequestTransformer
         $searchItemsRequest = new SearchItemsRequest();
         $searchItemsRequest->setSearchIndex(self::SEARCH_INDEX);
         $searchItemsRequest->setKeywords($request->keyword());
-        $searchItemsRequest->setItemCount($request->itemsQuantity());
+        $searchItemsRequest->setItemPage($request->page());
         $searchItemsRequest->setPartnerTag(getenv('PARTNER_TAG') ?: '');
         $searchItemsRequest->setPartnerType(PartnerType::ASSOCIATES);
         $searchItemsRequest->setResources($this->resources());
